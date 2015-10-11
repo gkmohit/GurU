@@ -27,6 +27,8 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        //TODO parse capitol one data.
+
         ButterKnife.bind(this);
         NessieClient nessieClient = NessieClient.getInstance();
         nessieClient.setAPIKey("aaac90dbd742db8c24cb199b92a5f345");
