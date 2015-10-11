@@ -29,13 +29,18 @@ public class SignActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign);
         ButterKnife.bind(this);
         if(isNetworkAvailable()){
-            Toast.makeText(SignActivity.this, "Yay", Toast.LENGTH_LONG).show();
-
+            //Toast.makeText(SignActivity.this, "Yay", Toast.LENGTH_LONG).show();
             mRegisterButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent myIntent = new Intent(SignActivity.this , RegistrationActivity.class);
                     SignActivity.this.startActivity(myIntent);
+                }
+            });
+            mSignInButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    
                 }
             });
         }
