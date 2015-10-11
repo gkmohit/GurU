@@ -1,6 +1,7 @@
 package com.unknown.gkmohit.guru;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class SignActivity extends AppCompatActivity {
 
@@ -25,13 +27,15 @@ public class SignActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
+        ButterKnife.bind(this);
         if(isNetworkAvailable()){
             Toast.makeText(SignActivity.this, "Yay", Toast.LENGTH_LONG).show();
 
-            mSignInButton.setOnClickListener(new View.OnClickListener() {
+            mRegisterButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    
+                    Intent myIntent = new Intent(SignActivity.this , RegistrationActivity.class);
+                    SignActivity.this.startActivity(myIntent);
                 }
             });
         }
