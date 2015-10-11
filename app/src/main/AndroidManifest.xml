@@ -26,8 +26,12 @@
             android:label="@string/title_activity_registration" >
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".Model.DashBoard"
+            android:label="@string/title_activity_dash_board" >
         </activity>
     </application>
 

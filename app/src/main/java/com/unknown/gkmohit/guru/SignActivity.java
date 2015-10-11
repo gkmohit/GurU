@@ -33,14 +33,15 @@ public class SignActivity extends AppCompatActivity {
             mRegisterButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent myIntent = new Intent(SignActivity.this , RegistrationActivity.class);
-                    SignActivity.this.startActivity(myIntent);
+                    Intent registrationIntent = new Intent(SignActivity.this , RegistrationActivity.class);
+                    SignActivity.this.startActivity(registrationIntent);
                 }
             });
             mSignInButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    
+                    Intent loginIntent = new Intent(SignActivity.this, LoginActivity.class);
+                    SignActivity.this.startActivity(loginIntent);
                 }
             });
         }
