@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -64,22 +63,24 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //Request request = new Request().
-                try {
-                    Toast.makeText(LoginActivity.this, "in try loop", Toast.LENGTH_SHORT).show();
-                    //if(mEmailET.getText().toString().trim().length() > 0 && mPasswordET.getText().toString().trim().length() > 0){
-                        Toast.makeText(LoginActivity.this, "In if statement", Toast.LENGTH_LONG).show();
-                        String email = getInIn().getEmail();
-                        String password = getInIn().getPassword();
-                        String json = "{ email : " + email + " , " + "password : " + password + "}";
-                        Toast.makeText(LoginActivity.this, post(POST_URL, json), Toast.LENGTH_SHORT).show();
-                    //}
-
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    Toast.makeText(LoginActivity.this, "IN THE CATCH", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-
+//                try {
+//                    Toast.makeText(LoginActivity.this, "in try loop", Toast.LENGTH_SHORT).show();
+//                    if(mEmailET.getText().toString().trim().length() > 0 && mPasswordET.getText().toString().trim().length() > 0){
+//                        Toast.makeText(LoginActivity.this, "In if statement", Toast.LENGTH_LONG).show();
+//                        String email = getInIn().getEmail();
+//                        String password = getInIn().getPassword();
+//                        String json = "{ email : " + email + " , " + "password : " + password + "}";
+//                        Toast.makeText(LoginActivity.this, post(POST_URL, json), Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                } catch (IOException e) {
+//                    // TODO Auto-generated catch block
+//                    Toast.makeText(LoginActivity.this, "IN THE CATCH", Toast.LENGTH_SHORT).show();
+//                    e.printStackTrace();
+//                }
+                Intent loginActivity = new Intent(LoginActivity.this, DashboardActivity.class);
+                startActivity(loginActivity);
+                LoginActivity.this.finish();
             }
 
             private String post(String url, String json) throws IOException {
@@ -103,7 +104,5 @@ public class LoginActivity extends AppCompatActivity {
     public void setInIn(InIn inIn) {
         mInIn = inIn;
     }
-
-
 
 }

@@ -57,7 +57,7 @@ public class SignActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean isNetworkAvailable() {
+    public boolean isNetworkAvailable() {
 
         boolean isAvailable = false;
         ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
